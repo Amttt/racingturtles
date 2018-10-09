@@ -6,6 +6,7 @@ import random as r
 t.shape("turtle")
 t.ht() 
 t.penup()
+t.speed(50)
 
 # Initialize race track variables
 x = -200
@@ -78,33 +79,38 @@ bert.pd()
 
 
 # Initialize race variables
-movement = r.randint(0,4)
+#movement = r.randint(0,2)
 over = False
+t.setpos(x+125,-50)
 t.pd()
+
 
 
 # Begin race loop
 while over == False:
+    movement = r.randint(0,2)
     marc.fd(movement)
-    movement = r.randint(0,4)
+    movement = r.randint(0,2)
     if marc.xcor() >= 200:
-        t.write('MARC wins!', font=("Arial", 32, "normal"))
+        t.write('MARC wins!', font=("Arial", 20, "normal"))
         over = True
     amt.fd(movement)
-    movement = r.randint(0,4)
+    movement = r.randint(0,2)
     if amt.xcor() >= 200:
-        t.write('AMT wins!', font=("Arial", 32, "normal"))
+        t.write('AMT wins!', font=("Arial", 20, "normal"))
         over = True
     veil.fd(movement)
-    movement = r.randint(0,4)
+    movement = r.randint(0,2)
     if veil.xcor() >= 200:
-        t.write('VEIL wins!', font=("Arial", 32, "normal"))
+        t.write('VEIL wins!', font=("Arial", 20, "normal"))
         over = True
     bert.fd(movement)
     if bert.xcor() >= 200:
-        t.write('BERT wins!', font=("Arial", 32, "normal"))
+        t.write('BERT wins!', font=("Arial", 20, "normal"))
         over = True
-    
+
+t.done()
+
     
 
 
